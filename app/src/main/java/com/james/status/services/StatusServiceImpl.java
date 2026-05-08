@@ -275,10 +275,14 @@ public class StatusServiceImpl {
             WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                     WindowManager.LayoutParams.MATCH_PARENT, StaticUtils.getStatusBarHeight(service),
                     getOverlayType(),
-                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     PixelFormat.TRANSLUCENT);
 
             params.gravity = Gravity.TOP;
+            
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    params.y = 0;
+}
 
             windowManager.addView(statusView, params);
         } else if (!shouldKeepOld)
