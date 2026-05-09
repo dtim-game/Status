@@ -122,10 +122,13 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.github.drozdzynski:Steppers:90411a5'
-    implementation 'james.signalstrengths:signalstrengths:0.0.4'
-    implementation 'com.afollestad:async:0.2.3'
+    
+    // Заменены устаревшие зависимости из Bintray на современные альтернативы
+    implementation 'com.github.jfenn:SignalStrength:v1.0.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation 'com.github.jfenn:Attribouter:0.2.0'
+    
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'me.jfenn:Attribouter:0.1.5'
     implementation 'me.jfenn.ColorPickerDialog:base:0.2.1'
     implementation 'me.jfenn.ColorPickerDialog:imagepicker:0.2.1'
     implementation 'me.jfenn:AndroidUtils:0.0.1'
