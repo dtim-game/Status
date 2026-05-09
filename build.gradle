@@ -26,19 +26,7 @@ allprojects {
             url "https://oss.sonatype.org/content/repositories/snapshots/"
         }
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/jfenn/*")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR") ?: "github"
-                password = System.getenv("GITHUB_TOKEN") ?: System.getenv("GITHUB_TOKEN_PUB") ?: ""
-            }
-        }
-        maven {
             url "https://jitpack.io"
-            credentials { auth(HttpHeaderCredentials.class) {
-                name = "Authorization"
-                value = "token " + (System.getenv("GITHUB_TOKEN") ?: System.getenv("GITHUB_TOKEN_PUB") ?: "")
-            }}
         }
         google()
     }
